@@ -62,7 +62,6 @@ namespace AppGui
 
         public void MmiC_Message(object sender, MmiEventArgs e)
         {
-            spotify.SetSpotifyVolume(100);
             Console.WriteLine(e.Message);
             var doc = XDocument.Parse(e.Message);
             var com = doc.Descendants("command").FirstOrDefault().Value;
@@ -105,6 +104,9 @@ namespace AppGui
                         break;
                     case "PAUSE":
                         spotify.Pause();
+                        break;
+                    case "PAUSE_FUSION":
+                        MessageBox.Show("Cenas Fixes");
                         break;
                     case "SKIP":
                         spotify.Skip();
