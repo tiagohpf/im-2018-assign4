@@ -274,7 +274,7 @@
         private void sendMessage(string gesture, double confidence)
         {
             string json = "{ \"recognized\": [";
-            json += "\"" + confidence + "\", ";
+            json += "\"" + "confidence" + "\", ";
             json += "\"" + gesture + "\", ";
             // Just using the first two comands. The rest is EMP
             for (int i = 0; i < 8; i++)

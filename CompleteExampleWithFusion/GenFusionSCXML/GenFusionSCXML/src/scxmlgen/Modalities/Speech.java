@@ -10,11 +10,11 @@ public enum Speech implements IModality {
     /*SQUARE("[shape][SQUARE]",1500),
         TRIANGLE("[shape][TRIANGLE]",1500),
         CIRCLE("[shape][CIRCLE]",1500);*/
-    PAUSE("[confidence][THIS][emp][emp][emp][emp][emp][emp][emp]", 4000),
-    SKIP("[confidence][THIS][emp][emp][emp][emp][emp][emp][emp]", 4000),
-    BACK("[confidence][THIS][emp][emp][emp][emp][emp][emp][emp]", 4000),
-    /*VUP("[confidence][THIS][emp][emp][emp][emp][emp][emp][emp]", 1500),
-    VDOWN("[confidence][THIS][emp][emp][emp][emp][emp][emp][emp]", 1500)*/;
+    PAUSE("[confidence][THIS][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 4000),
+    SKIP("[confidence][THIS][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 4000),
+    BACK("[confidence][THIS][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 4000),
+    /*VUP("[confidence][THIS][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 1500),
+    VDOWN("[confidence][THIS][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 1500)*/;
 
     private String event;
     private int timeout;

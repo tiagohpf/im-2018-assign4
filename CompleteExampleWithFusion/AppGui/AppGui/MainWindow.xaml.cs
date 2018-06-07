@@ -66,7 +66,7 @@ namespace AppGui
             var doc = XDocument.Parse(e.Message);
             var com = doc.Descendants("command").FirstOrDefault().Value;
             dynamic json = JsonConvert.DeserializeObject(com);
-            double confidence = Double.Parse((string)json.recognized[0].ToString());
+            String confidence = json.recognized[0].ToString();
             String command = (string)json.recognized[1].ToString();
             String album = (string)json.recognized[2].ToString();
             String song = (string)json.recognized[3].ToString();
@@ -82,10 +82,10 @@ namespace AppGui
                 return;
             }
 
-            if (confidence < 0.3)
+            /*if (confidence < 0.3)
             {
                 t.Speak("Sentence not valid. Please try again");
-            }
+            }*/
 
             // Using just a normal command
             else

@@ -16,8 +16,8 @@ public enum Output implements IOutput{
     CIRCLE_BLUE("[shape][CIRCLE][color][BLUE]"),
     CIRCLE_YELLOW("[shape][CIRCLE][color][YELLOW]"),
     CIRCLE("[shape][CIRCLE]")*/
-    PAUSE_PAUSE("[confidence][PAUSE_FUSION][emp][emp][emp][emp][emp][emp][emp]"),
-    SKIP_SKIP("[confidence][SKIP_FUSION][emp][emp][emp][emp][emp][emp][emp]");
+    PAUSE_PAUSE("[confidence][PAUSE_FUSION][EMP][EMP][EMP][EMP][EMP][EMP][EMP]"),
+    SKIP_SKIP("[confidence][SKIP_FUSION][EMP][EMP][EMP][EMP][EMP][EMP][EMP]");
     ;
     
     
