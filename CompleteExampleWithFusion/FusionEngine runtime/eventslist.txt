@@ -1,0 +1,3 @@
+[confidence][SKIP][emp][emp][emp][emp][emp][emp][emp]
+[confidence][PAUSE][emp][emp][emp][emp][emp][emp][emp]
+[confidence][THIS][emp][emp][emp][emp][emp][emp][emp]
