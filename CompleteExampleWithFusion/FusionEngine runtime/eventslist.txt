@@ -1,2 +1,4 @@
+[confidence][SKIP][EMP][EMP][EMP][EMP][EMP][EMP][EMP]
+[confidence][BACK][EMP][EMP][EMP][EMP][EMP][EMP][EMP]
 [confidence][PAUSE][EMP][EMP][EMP][EMP][EMP][EMP][EMP]
 [confidence][THIS][EMP][EMP][EMP][EMP][EMP][EMP][EMP]

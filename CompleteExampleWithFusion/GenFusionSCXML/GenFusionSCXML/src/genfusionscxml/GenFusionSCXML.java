@@ -35,7 +35,9 @@ public class GenFusionSCXML {
     fg.Complementary(Speech.CIRCLE, SecondMod.BLUE, Output.CIRCLE_BLUE);
     fg.Complementary(Speech.CIRCLE, SecondMod.YELLOW, Output.CIRCLE_YELLOW);*/
     //fg.Sequence(Speech.PAUSE, SecondMod.PAUSE, Output.PAUSE_PAUSE);
-    fg.Redundancy(SecondMod.PAUSE, Speech.PAUSE, Output.PAUSE_PAUSE);
+    fg.Sequence(Speech.NOW, SecondMod.PAUSE, Output.PAUSE_PAUSE);
+    fg.Sequence(Speech.NOW, SecondMod.SKIP, Output.SKIP_SKIP);
+    fg.Sequence(Speech.NOW, SecondMod.BACK, Output.BACK_BACK);
     
     //fg.Single(Speech.CIRCLE, Output.CIRCLE);  //EXAMPLE
     //fg.Redundancy(Speech.CIRCLE, SecondMod.CIRCLE, Output.CIRCLE);  //EXAMPLE
