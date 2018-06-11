@@ -12,11 +12,10 @@ public enum SecondMod implements IModality {
     BLUE("[color][BLUE]",1500),
     YELLOW("[color][YELLOW]",1500);*/
     PAUSE("[confidence][PAUSE][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 4000),
-    SKIP("[confidence][SKIP][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 4000),
-    BACK("[confidence][BACK][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 4000),
-    VUP("[confidence][SKIP][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 4000),
-    VDOWN("[confidence][BACK][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 4000),
-    ;
+    SKIP("[confidence][SKIP][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 1500),
+    BACK("[confidence][BACK][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 1500),
+    VUP("[confidence][VUP][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 1500),
+    VDOWN("[confidence][VDOWN][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 1500);
     
     private String event;
     private int timeout;

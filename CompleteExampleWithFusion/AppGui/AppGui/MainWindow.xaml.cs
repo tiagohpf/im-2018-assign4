@@ -68,6 +68,7 @@ namespace AppGui
             dynamic json = JsonConvert.DeserializeObject(com);
             String confidence = json.recognized[0].ToString();
             String command = (string)json.recognized[1].ToString();
+            MessageBox.Show(command);
             String album = (string)json.recognized[2].ToString();
             String song = (string)json.recognized[3].ToString();
             String by = (string)json.recognized[4].ToString();

@@ -40,10 +40,10 @@
 
   <rule id="command">
   <one-of>
-    <item>
-      This music <tag>out = "THIS"</tag>
-    </item>
-        <item>
+      <item>
+        Now <tag>out = "THIS"</tag>
+      </item>
+      <item>
         What can I do? <tag>out = "HELP"</tag>
       </item>
       <item>

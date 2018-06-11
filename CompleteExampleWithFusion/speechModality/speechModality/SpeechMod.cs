@@ -70,8 +70,6 @@ namespace speechModality
             }
             json = json.Substring(0, json.Length - 2);
             json += "] }";
-            Console.WriteLine(json);
-            //MessageBox.Show((string)json.ToString());
             var exNot = lce.ExtensionNotification(e.Result.Audio.StartTime+"", e.Result.Audio.StartTime.Add(e.Result.Audio.Duration)+"",e.Result.Confidence, json);
             mmic.Send(exNot);
         }
