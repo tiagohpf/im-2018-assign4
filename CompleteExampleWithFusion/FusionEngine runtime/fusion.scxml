@@ -35,7 +35,7 @@
       <log label="[sspeech[confidence][this][emp][emp][emp][emp][emp][emp][emp]-secondmod[confidence][pause][emp][emp][emp][emp][emp][emp][emp]]" expr="READY" />
       <assign name="data2" expr="${_eventdata.data}" />
       <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[confidence][PAUSE_FUSION][EMP][EMP][EMP][EMP][EMP][EMP][EMP]')}" />
-      <send event="PAUSE_PAUSE" target="IM" targettype="MC" namelist="newExtensionNotification" />
+      <send event="PAUSE_FUSION" target="IM" targettype="MC" namelist="newExtensionNotification" />
     </onentry>
     <transition target="main" />
   </state>
@@ -44,7 +44,7 @@
       <log label="[sspeech[confidence][this][emp][emp][emp][emp][emp][emp][emp]-secondmod[confidence][skip][emp][emp][emp][emp][emp][emp][emp]]" expr="READY" />
       <assign name="data2" expr="${_eventdata.data}" />
       <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[confidence][SKIP_FUSION][EMP][EMP][EMP][EMP][EMP][EMP][EMP]')}" />
-      <send event="SKIP_SKIP" target="IM" targettype="MC" namelist="newExtensionNotification" />
+      <send event="SKIP_FUSION" target="IM" targettype="MC" namelist="newExtensionNotification" />
     </onentry>
     <transition target="main" />
   </state>
@@ -53,7 +53,7 @@
       <log label="[sspeech[confidence][this][emp][emp][emp][emp][emp][emp][emp]-secondmod[confidence][back][emp][emp][emp][emp][emp][emp][emp]]" expr="READY" />
       <assign name="data2" expr="${_eventdata.data}" />
       <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[confidence][BACK_FUSION][EMP][EMP][EMP][EMP][EMP][EMP][EMP]')}" />
-      <send event="BACK_BACK" target="IM" targettype="MC" namelist="newExtensionNotification" />
+      <send event="BACK_FUSION" target="IM" targettype="MC" namelist="newExtensionNotification" />
     </onentry>
     <transition target="main" />
   </state>

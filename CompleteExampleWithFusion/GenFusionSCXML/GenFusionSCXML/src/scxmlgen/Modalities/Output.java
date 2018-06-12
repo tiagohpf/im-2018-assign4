@@ -16,9 +16,9 @@ public enum Output implements IOutput{
     CIRCLE_BLUE("[shape][CIRCLE][color][BLUE]"),
     CIRCLE_YELLOW("[shape][CIRCLE][color][YELLOW]"),
     CIRCLE("[shape][CIRCLE]")*/
-    PAUSE_PAUSE("[confidence][PAUSE_FUSION][EMP][EMP][EMP][EMP][EMP][EMP][EMP]"),
-    SKIP_SKIP("[confidence][SKIP_FUSION][EMP][EMP][EMP][EMP][EMP][EMP][EMP]"),
-    BACK_BACK("[confidence][BACK_FUSION][EMP][EMP][EMP][EMP][EMP][EMP][EMP]");
+    PAUSE_FUSION("[confidence][PAUSE_FUSION][EMP][EMP][EMP][EMP][EMP][EMP][EMP]"),
+    SKIP_FUSION("[confidence][SKIP_FUSION][EMP][EMP][EMP][EMP][EMP][EMP][EMP]"),
+    BACK_FUSION("[confidence][BACK_FUSION][EMP][EMP][EMP][EMP][EMP][EMP][EMP]");
     
     private String event;
 
