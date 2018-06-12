@@ -107,12 +107,19 @@ namespace AppGui
                         spotify.Pause();
                         break;
                     case "PAUSE_FUSION":
-                        MessageBox.Show("Cenas Fixes");
+                        spotify.Pause();
                         break;
                     case "SKIP":
                         spotify.Skip();
                         break;
+                    case "SKIP_FUSION":
+                        spotify.Skip();
+                        break;
                     case "BACK":
+                        spotify.Previous();
+                        spotify.Previous();
+                        break;
+                    case "BACK_FUSION":
                         spotify.Previous();
                         spotify.Previous();
                         break;
