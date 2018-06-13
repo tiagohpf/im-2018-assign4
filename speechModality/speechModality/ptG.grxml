@@ -41,7 +41,7 @@
   <rule id="command">
   <one-of>
       <item>
-        Now <tag>out = "THIS"</tag>
+        Now <tag>out = "NOW"</tag>
       </item>
       <item>
         What can I do? <tag>out = "HELP"</tag>

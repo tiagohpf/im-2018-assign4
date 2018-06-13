@@ -27,6 +27,8 @@ public class GenFusionSCXML {
     fg.Complementary(Speech.NOW, SecondMod.PAUSE, Output.PAUSE_FUSION);
     fg.Complementary(Speech.NOW, SecondMod.SKIP, Output.SKIP_FUSION);
     fg.Complementary(Speech.NOW, SecondMod.BACK, Output.BACK_FUSION);
+    fg.Redundancy(Speech.VUP, SecondMod.VUP, Output.VUP_FUSION);
+    fg.Redundancy(Speech.VDOWN, SecondMod.VDOWN, Output.VDOWN_FUSION);
     fg.Build("fusion.scxml");
     }
 }

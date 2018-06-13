@@ -1,4 +1,6 @@
 [confidence][SKIP][EMP][EMP][EMP][EMP][EMP][EMP][EMP]
+[confidence][VUP][EMP][EMP][EMP][EMP][EMP][EMP][EMP]
+[confidence][NOW][EMP][EMP][EMP][EMP][EMP][EMP][EMP]
 [confidence][BACK][EMP][EMP][EMP][EMP][EMP][EMP][EMP]
 [confidence][PAUSE][EMP][EMP][EMP][EMP][EMP][EMP][EMP]
-[confidence][THIS][EMP][EMP][EMP][EMP][EMP][EMP][EMP]
+[confidence][VDOWN][EMP][EMP][EMP][EMP][EMP][EMP][EMP]
