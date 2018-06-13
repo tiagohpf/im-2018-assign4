@@ -35,7 +35,6 @@
             //mmic = new MmiCommunication("localhost", 8000, "User1", "GESTURES"); // MmiCommunication(string IMhost, int portIM, string UserOD, string thisModalityName)
             mmic.Send(lce.NewContextRequest());
             string json = "{ \"recognized\": [";
-            json += "\"" + "confidence" + "\", ";
             json += "\"" + "PAUSE" + "\", ";
             // Just using the first two comands. The rest is EMP
             for (int i = 1; i < 8; i++)

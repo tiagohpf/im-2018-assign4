@@ -60,10 +60,7 @@ namespace speechModality
         {
             onRecognized(new SpeechEventArg(){Text = e.Result.Text, Confidence = e.Result.Confidence, Final = true});
             
-            //SEND
-            // IMPORTANT TO KEEP THE FORMAT {"recognized":["SHAPE","COLOR"]}
             string json = "{ \"recognized\": [";
-            json += "\"" + "confidence" + "\", ";
             foreach (var resultSemantic in e.Result.Semantics)
             {
                 json+= "\"" + resultSemantic.Value.Value +"\", ";

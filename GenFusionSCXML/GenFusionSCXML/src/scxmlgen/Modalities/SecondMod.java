@@ -7,11 +7,11 @@ import scxmlgen.interfaces.IModality;
  * @author nunof
  */
 public enum SecondMod implements IModality {
-    PAUSE("[confidence][PAUSE][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 1500),
-    SKIP("[confidence][SKIP][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 1500),
-    BACK("[confidence][BACK][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 1500),
-    VUP("[confidence][VUP][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 1500),
-    VDOWN("[confidence][VDOWN][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 1500);
+    PAUSE("[PAUSE][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 1500),
+    SKIP("[SKIP][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 1500),
+    BACK("[BACK][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 1500),
+    VUP("[VUP][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 1500),
+    VDOWN("[VDOWN][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 1500);
     
     private String event;
     private int timeout;
