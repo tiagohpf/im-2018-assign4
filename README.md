@@ -1,18 +1,22 @@
-# Spotify Voice Controller
+# Spotify Controller
 
-A software that controls tasks of Spotify with voice.
+A software that controls tasks of Spotify with gestures and voice.
 
-### Dependencies
+## Dependencies
 
-You've to install [SpotifyAPI-NET](https://github.com/JohnnyCrazy/SpotifyAPI-NET) in order of using the functionalities of Spotify API.<br /> 
-You can install the packages from NuGet Package Manager Console of Visual Studio's Tools bar, by using the following command:
+First of all, install Microsoft Speech Platform's dependencies: [SDK](https://www.microsoft.com/en-us/download/details.aspx?id=27226), [Runtime](http://www.microsoft.com/en-us/download/details.aspx?id=27225) and [Languages](http://www.microsoft.com/en-us/download/details.aspx?id=27224) downloading MSSpeech_SR_en-US_TELE.msi and MSSpeech_TTS_en-US_ZiraPro.msi. <br>
+Then, download and install [Kinect SDK](https://www.microsoft.com/en-us/download/details.aspx?id=44561) to enable the Kinect device in your computer. <br>
+Finally, install [SpotifyAPI-NET](https://github.com/JohnnyCrazy/SpotifyAPI-NET) and Microsoft Kinect dependencies. 
+You can install the packages from NuGet Package Manager Console of Visual Studio's Tools bar, by using the following commands:
 
 ```
-Install-Package SpotifyAPI-NET -Version 2.18.1
+Install-Package Microsoft.Kinect
+Install-Package Microsoft.Kinect.VisualGestureBuilder.x64 -Version 2.0.1410.19000
+Install-Package SpotifyAPI-NET -Version 2.19.0
 ```
-After that, go to Tools tab again and choose  the option "Manage NuGet Packages for Solution" to check if you have all updates installed.
+After that, go to Tools tab again and choose the option "Manage NuGet Packages for Solution" to check if you have all updates installed.
 
-### Login
+## Login
 
 To enter in Spotify, you've to use the following credentials:
 
