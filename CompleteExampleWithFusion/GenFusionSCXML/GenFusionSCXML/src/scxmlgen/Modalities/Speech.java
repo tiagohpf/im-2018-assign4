@@ -6,13 +6,7 @@ package scxmlgen.Modalities;
 import scxmlgen.interfaces.IModality;
 
 public enum Speech implements IModality {
-
-    /*SQUARE("[shape][SQUARE]",1500),
-        TRIANGLE("[shape][TRIANGLE]",1500),
-        CIRCLE("[shape][CIRCLE]",1500);*/
     NOW("[confidence][THIS][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 4000);
-    /*VUP("[confidence][THIS][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 1500),
-    VDOWN("[confidence][THIS][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 1500)*/
 
     private String event;
     private int timeout;

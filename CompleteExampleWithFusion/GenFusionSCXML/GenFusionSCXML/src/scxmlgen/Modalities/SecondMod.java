@@ -7,10 +7,6 @@ import scxmlgen.interfaces.IModality;
  * @author nunof
  */
 public enum SecondMod implements IModality {
-
-    /*RED("[color][RED]",1500),
-    BLUE("[color][BLUE]",1500),
-    YELLOW("[color][YELLOW]",1500);*/
     PAUSE("[confidence][PAUSE][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 4000),
     SKIP("[confidence][SKIP][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 1500),
     BACK("[confidence][BACK][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 1500),

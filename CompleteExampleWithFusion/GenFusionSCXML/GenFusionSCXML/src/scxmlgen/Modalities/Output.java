@@ -5,17 +5,6 @@ import scxmlgen.interfaces.IOutput;
 
 
 public enum Output implements IOutput{
-    
-    /*SQUARE_RED("[shape][SQUARE][color][RED]"),
-    SQUARE_BLUE("[shape][SQUARE][color][BLUE]"),
-    SQUARE_YELLOW("[shape][SQUARE][color][YELLOW]"),
-    TRIANGLE_RED("[shape][TRIANGLE][color][RED]"),
-    TRIANGLE_BLUE("[shape][TRIANGLE][color][BLUE]"),
-    TRIANGLE_YELLOW("[shape][TRIANGLE][color][YELLOW]"),
-    CIRCLE_RED("[shape][CIRCLE][color][RED]"),
-    CIRCLE_BLUE("[shape][CIRCLE][color][BLUE]"),
-    CIRCLE_YELLOW("[shape][CIRCLE][color][YELLOW]"),
-    CIRCLE("[shape][CIRCLE]")*/
     PAUSE_FUSION("[confidence][PAUSE_FUSION][EMP][EMP][EMP][EMP][EMP][EMP][EMP]"),
     SKIP_FUSION("[confidence][SKIP_FUSION][EMP][EMP][EMP][EMP][EMP][EMP][EMP]"),
     BACK_FUSION("[confidence][BACK_FUSION][EMP][EMP][EMP][EMP][EMP][EMP][EMP]");
