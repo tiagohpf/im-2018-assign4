@@ -3,4 +3,5 @@
 [confidence][NOW][EMP][EMP][EMP][EMP][EMP][EMP][EMP]
 [confidence][BACK][EMP][EMP][EMP][EMP][EMP][EMP][EMP]
 [confidence][PAUSE][EMP][EMP][EMP][EMP][EMP][EMP][EMP]
+[confidence][HELP][EMP][EMP][EMP][EMP][EMP][EMP][EMP]
 [confidence][VDOWN][EMP][EMP][EMP][EMP][EMP][EMP][EMP]

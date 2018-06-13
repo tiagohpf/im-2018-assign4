@@ -8,8 +8,9 @@ import scxmlgen.interfaces.IModality;
 public enum Speech implements IModality {
     NOW("[confidence][NOW][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 4000),
     VUP("[confidence][VUP][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 1500),
-    VDOWN("[confidence][VDOWN][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 1500);
-
+    VDOWN("[confidence][VDOWN][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 1500),
+    HELP("[confidence][HELP][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 1500);
+    
     private String event;
     private int timeout;
 
