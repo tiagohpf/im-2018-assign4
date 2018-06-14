@@ -44,7 +44,7 @@
         Now <tag>out = "NOW"</tag>
       </item>
       <item>
-        What can I do? <tag>out = "HELP"</tag>
+        I would like to <tag>out = "NOW"</tag>
       </item>
       <item>
         Help me <tag>out = "HELP"</tag>
