@@ -6,10 +6,20 @@ package scxmlgen.Modalities;
 import scxmlgen.interfaces.IModality;
 
 public enum Speech implements IModality {
+    // Complementary Command
     NOW("[NOW][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 4000),
-    VUP("[VUP][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 1500),
-    VDOWN("[VDOWN][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 1500),
-    HELP("[HELP][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 1500);
+    
+    // Redundant Commands
+    VUP("[VUP][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 4000),
+    VDOWN("[VDOWN][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 4000),
+    
+    // Single Commands
+    HELP("[HELP][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 1500),
+    QUIT("[QUIT][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 1500),
+    ADD("[ADD][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 1500),
+    PLAY("[PLAY][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 1500),
+    MUTE("[MUTE][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 1500),
+    UNMUTE("[UNMUTE][EMP][EMP][EMP][EMP][EMP][EMP][EMP]", 1500);
     
     private String event;
     private int timeout;
@@ -33,5 +43,4 @@ public enum Speech implements IModality {
     public String getEvName() {
         return getModalityName().toLowerCase() + event.toLowerCase();
     }
-
 }

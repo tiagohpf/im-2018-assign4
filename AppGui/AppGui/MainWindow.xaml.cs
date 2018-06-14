@@ -310,13 +310,13 @@ namespace AppGui
                             }
                             else
                             {
-                                t.Speak("I am very sorry but this command is not supported. Can you repeat?");
+                                t.Speak("I am very sorry but this command is not supported. Can you try again?");
                             }
                         }
                     });
                         break;
                     default:
-                        t.Speak("I am very sorry but this command is not supported. Can you repeat?");
+                        t.Speak("I am very sorry but this command is not supported. Can you try again?");
                         break;
                 }
             }
@@ -333,7 +333,7 @@ namespace AppGui
             {
                 if (!album.Equals("EMP") || !song.Equals("EMP") || !by.Equals("EMP") || !artist.Equals("EMP") || !genre.Equals("EMP") || !from.Equals("EMP") || !year.Equals("EMP"))
                 {
-                    t.Speak("Don't say anything after commands.");
+                    t.Speak("Don't say anything after a command.");
                     valid = false;
                 }
             }

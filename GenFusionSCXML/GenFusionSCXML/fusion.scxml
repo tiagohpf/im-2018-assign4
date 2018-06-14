@@ -14,15 +14,165 @@
     <onentry>
       <log label="[main]" expr="READY" />
     </onentry>
+    <transition target="sspeech[quit][emp][emp][emp][emp][emp][emp][emp]" event="[QUIT][EMP][EMP][EMP][EMP][EMP][EMP][EMP]" />
+    <transition target="sspeech[unmute][emp][emp][emp][emp][emp][emp][emp]" event="[UNMUTE][EMP][EMP][EMP][EMP][EMP][EMP][EMP]" />
+    <transition target="sspeech[play][emp][emp][emp][emp][emp][emp][emp]" event="[PLAY][EMP][EMP][EMP][EMP][EMP][EMP][EMP]" />
+    <transition target="sspeech[add][emp][emp][emp][emp][emp][emp][emp]" event="[ADD][EMP][EMP][EMP][EMP][EMP][EMP][EMP]" />
+    <transition target="sspeech[mute][emp][emp][emp][emp][emp][emp][emp]" event="[MUTE][EMP][EMP][EMP][EMP][EMP][EMP][EMP]" />
+    <transition target="ssecondmod[vup][emp][emp][emp][emp][emp][emp][emp]" event="[VUP][EMP][EMP][EMP][EMP][EMP][EMP][EMP]" />
+    <transition target="ssecondmod[skip][emp][emp][emp][emp][emp][emp][emp]" event="[SKIP][EMP][EMP][EMP][EMP][EMP][EMP][EMP]" />
     <transition target="ssecondmod[back][emp][emp][emp][emp][emp][emp][emp]" event="[BACK][EMP][EMP][EMP][EMP][EMP][EMP][EMP]" />
     <transition target="sspeech[vup][emp][emp][emp][emp][emp][emp][emp]" event="[VUP][EMP][EMP][EMP][EMP][EMP][EMP][EMP]" />
     <transition target="sspeech[now][emp][emp][emp][emp][emp][emp][emp]" event="[NOW][EMP][EMP][EMP][EMP][EMP][EMP][EMP]" />
     <transition target="ssecondmod[pause][emp][emp][emp][emp][emp][emp][emp]" event="[PAUSE][EMP][EMP][EMP][EMP][EMP][EMP][EMP]" />
-    <transition target="ssecondmod[vup][emp][emp][emp][emp][emp][emp][emp]" event="[VUP][EMP][EMP][EMP][EMP][EMP][EMP][EMP]" />
     <transition target="sspeech[help][emp][emp][emp][emp][emp][emp][emp]" event="[HELP][EMP][EMP][EMP][EMP][EMP][EMP][EMP]" />
-    <transition target="ssecondmod[skip][emp][emp][emp][emp][emp][emp][emp]" event="[SKIP][EMP][EMP][EMP][EMP][EMP][EMP][EMP]" />
     <transition target="sspeech[vdown][emp][emp][emp][emp][emp][emp][emp]" event="[VDOWN][EMP][EMP][EMP][EMP][EMP][EMP][EMP]" />
     <transition target="ssecondmod[vdown][emp][emp][emp][emp][emp][emp][emp]" event="[VDOWN][EMP][EMP][EMP][EMP][EMP][EMP][EMP]" />
+  </state>
+  <state id="sspeech[quit][emp][emp][emp][emp][emp][emp][emp]">
+    <onentry>
+      <log label="[sspeech[quit][emp][emp][emp][emp][emp][emp][emp]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-sspeech[quit][emp][emp][emp][emp][emp][emp][emp]" event="timeout-sspeech[quit][emp][emp][emp][emp][emp][emp][emp]" delay="0" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="speech[quit][emp][emp][emp][emp][emp][emp][emp]-final" event="timeout-sspeech[quit][emp][emp][emp][emp][emp][emp][emp]" />
+    <onexit>
+      <cancel sendid="state1-timer-sspeech[quit][emp][emp][emp][emp][emp][emp][emp]" />
+    </onexit>
+  </state>
+  <state id="speech[quit][emp][emp][emp][emp][emp][emp][emp]-final">
+    <onentry>
+      <log label="[speech[quit][emp][emp][emp][emp][emp][emp][emp]-final]" expr="READY" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF2(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1, '[QUIT][EMP][EMP][EMP][EMP][EMP][EMP][EMP]')}" />
+      <send event="QUIT" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[unmute][emp][emp][emp][emp][emp][emp][emp]">
+    <onentry>
+      <log label="[sspeech[unmute][emp][emp][emp][emp][emp][emp][emp]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-sspeech[unmute][emp][emp][emp][emp][emp][emp][emp]" event="timeout-sspeech[unmute][emp][emp][emp][emp][emp][emp][emp]" delay="0" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="speech[unmute][emp][emp][emp][emp][emp][emp][emp]-final" event="timeout-sspeech[unmute][emp][emp][emp][emp][emp][emp][emp]" />
+    <onexit>
+      <cancel sendid="state1-timer-sspeech[unmute][emp][emp][emp][emp][emp][emp][emp]" />
+    </onexit>
+  </state>
+  <state id="speech[unmute][emp][emp][emp][emp][emp][emp][emp]-final">
+    <onentry>
+      <log label="[speech[unmute][emp][emp][emp][emp][emp][emp][emp]-final]" expr="READY" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF2(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1, '[UNMUTE][EMP][EMP][EMP][EMP][EMP][EMP][EMP]')}" />
+      <send event="UNMUTE" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[play][emp][emp][emp][emp][emp][emp][emp]">
+    <onentry>
+      <log label="[sspeech[play][emp][emp][emp][emp][emp][emp][emp]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-sspeech[play][emp][emp][emp][emp][emp][emp][emp]" event="timeout-sspeech[play][emp][emp][emp][emp][emp][emp][emp]" delay="0" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="speech[play][emp][emp][emp][emp][emp][emp][emp]-final" event="timeout-sspeech[play][emp][emp][emp][emp][emp][emp][emp]" />
+    <onexit>
+      <cancel sendid="state1-timer-sspeech[play][emp][emp][emp][emp][emp][emp][emp]" />
+    </onexit>
+  </state>
+  <state id="speech[play][emp][emp][emp][emp][emp][emp][emp]-final">
+    <onentry>
+      <log label="[speech[play][emp][emp][emp][emp][emp][emp][emp]-final]" expr="READY" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF2(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1, '[PLAY][EMP][EMP][EMP][EMP][EMP][EMP][EMP]')}" />
+      <send event="PLAY" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[add][emp][emp][emp][emp][emp][emp][emp]">
+    <onentry>
+      <log label="[sspeech[add][emp][emp][emp][emp][emp][emp][emp]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-sspeech[add][emp][emp][emp][emp][emp][emp][emp]" event="timeout-sspeech[add][emp][emp][emp][emp][emp][emp][emp]" delay="0" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="speech[add][emp][emp][emp][emp][emp][emp][emp]-final" event="timeout-sspeech[add][emp][emp][emp][emp][emp][emp][emp]" />
+    <onexit>
+      <cancel sendid="state1-timer-sspeech[add][emp][emp][emp][emp][emp][emp][emp]" />
+    </onexit>
+  </state>
+  <state id="speech[add][emp][emp][emp][emp][emp][emp][emp]-final">
+    <onentry>
+      <log label="[speech[add][emp][emp][emp][emp][emp][emp][emp]-final]" expr="READY" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF2(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1, '[ADD][EMP][EMP][EMP][EMP][EMP][EMP][EMP]')}" />
+      <send event="ADD" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="sspeech[mute][emp][emp][emp][emp][emp][emp][emp]">
+    <onentry>
+      <log label="[sspeech[mute][emp][emp][emp][emp][emp][emp][emp]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-sspeech[mute][emp][emp][emp][emp][emp][emp][emp]" event="timeout-sspeech[mute][emp][emp][emp][emp][emp][emp][emp]" delay="0" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="speech[mute][emp][emp][emp][emp][emp][emp][emp]-final" event="timeout-sspeech[mute][emp][emp][emp][emp][emp][emp][emp]" />
+    <onexit>
+      <cancel sendid="state1-timer-sspeech[mute][emp][emp][emp][emp][emp][emp][emp]" />
+    </onexit>
+  </state>
+  <state id="speech[mute][emp][emp][emp][emp][emp][emp][emp]-final">
+    <onentry>
+      <log label="[speech[mute][emp][emp][emp][emp][emp][emp][emp]-final]" expr="READY" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF2(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1, '[MUTE][EMP][EMP][EMP][EMP][EMP][EMP][EMP]')}" />
+      <send event="MUTE" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="ssecondmod[vup][emp][emp][emp][emp][emp][emp][emp]">
+    <onentry>
+      <log label="[ssecondmod[vup][emp][emp][emp][emp][emp][emp][emp]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-ssecondmod[vup][emp][emp][emp][emp][emp][emp][emp]" event="timeout-ssecondmod[vup][emp][emp][emp][emp][emp][emp][emp]" delay="1500" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="secondmod[vup][emp][emp][emp][emp][emp][emp][emp]-final" event="timeout-ssecondmod[vup][emp][emp][emp][emp][emp][emp][emp]" />
+    <transition target="ssecondmod[vup][emp][emp][emp][emp][emp][emp][emp]-speech[vup][emp][emp][emp][emp][emp][emp][emp]" event="[VUP][EMP][EMP][EMP][EMP][EMP][EMP][EMP]" />
+    <onexit>
+      <cancel sendid="state1-timer-ssecondmod[vup][emp][emp][emp][emp][emp][emp][emp]" />
+    </onexit>
+  </state>
+  <state id="secondmod[vup][emp][emp][emp][emp][emp][emp][emp]-final">
+    <onentry>
+      <log label="[secondmod[vup][emp][emp][emp][emp][emp][emp][emp]-final]" expr="READY" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF2(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1, '[VUP][EMP][EMP][EMP][EMP][EMP][EMP][EMP]')}" />
+      <send event="VUP_RED" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="ssecondmod[vup][emp][emp][emp][emp][emp][emp][emp]-speech[vup][emp][emp][emp][emp][emp][emp][emp]">
+    <onentry>
+      <log label="[ssecondmod[vup][emp][emp][emp][emp][emp][emp][emp]-speech[vup][emp][emp][emp][emp][emp][emp][emp]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[VUP][EMP][EMP][EMP][EMP][EMP][EMP][EMP]')}" />
+      <send event="VUP_RED" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
+  </state>
+  <state id="ssecondmod[skip][emp][emp][emp][emp][emp][emp][emp]">
+    <onentry>
+      <log label="[ssecondmod[skip][emp][emp][emp][emp][emp][emp][emp]]" expr="READY" />
+      <assign name="data1" expr="${_eventdata.data}" />
+      <send id="state1-timer-ssecondmod[skip][emp][emp][emp][emp][emp][emp][emp]" event="timeout-ssecondmod[skip][emp][emp][emp][emp][emp][emp][emp]" delay="1500" target="" targettype="" namelist="" />
+    </onentry>
+    <transition target="main" event="timeout-ssecondmod[skip][emp][emp][emp][emp][emp][emp][emp]" />
+    <transition target="ssecondmod[skip][emp][emp][emp][emp][emp][emp][emp]-speech[now][emp][emp][emp][emp][emp][emp][emp]" event="[NOW][EMP][EMP][EMP][EMP][EMP][EMP][EMP]" />
+    <onexit>
+      <cancel sendid="state1-timer-ssecondmod[skip][emp][emp][emp][emp][emp][emp][emp]" />
+    </onexit>
+  </state>
+  <state id="ssecondmod[skip][emp][emp][emp][emp][emp][emp][emp]-speech[now][emp][emp][emp][emp][emp][emp][emp]">
+    <onentry>
+      <log label="[ssecondmod[skip][emp][emp][emp][emp][emp][emp][emp]-speech[now][emp][emp][emp][emp][emp][emp][emp]]" expr="READY" />
+      <assign name="data2" expr="${_eventdata.data}" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[SKIP_FUSION][EMP][EMP][EMP][EMP][EMP][EMP][EMP]')}" />
+      <send event="SKIP_FUSION" target="IM" targettype="MC" namelist="newExtensionNotification" />
+    </onentry>
+    <transition target="main" />
   </state>
   <state id="ssecondmod[back][emp][emp][emp][emp][emp][emp][emp]">
     <onentry>
@@ -49,7 +199,7 @@
     <onentry>
       <log label="[sspeech[vup][emp][emp][emp][emp][emp][emp][emp]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sspeech[vup][emp][emp][emp][emp][emp][emp][emp]" event="timeout-sspeech[vup][emp][emp][emp][emp][emp][emp][emp]" delay="1500" target="" targettype="" namelist="" />
+      <send id="state1-timer-sspeech[vup][emp][emp][emp][emp][emp][emp][emp]" event="timeout-sspeech[vup][emp][emp][emp][emp][emp][emp][emp]" delay="4000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="speech[vup][emp][emp][emp][emp][emp][emp][emp]-final" event="timeout-sspeech[vup][emp][emp][emp][emp][emp][emp][emp]" />
     <transition target="sspeech[vup][emp][emp][emp][emp][emp][emp][emp]-secondmod[vup][emp][emp][emp][emp][emp][emp][emp]" event="[VUP][EMP][EMP][EMP][EMP][EMP][EMP][EMP]" />
@@ -60,8 +210,8 @@
   <state id="speech[vup][emp][emp][emp][emp][emp][emp][emp]-final">
     <onentry>
       <log label="[speech[vup][emp][emp][emp][emp][emp][emp][emp]-final]" expr="READY" />
-      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF2(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1, '[VUP_FUSION][EMP][EMP][EMP][EMP][EMP][EMP][EMP]')}" />
-      <send event="VUP_FUSION" target="IM" targettype="MC" namelist="newExtensionNotification" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF2(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1, '[VUP][EMP][EMP][EMP][EMP][EMP][EMP][EMP]')}" />
+      <send event="VUP_RED" target="IM" targettype="MC" namelist="newExtensionNotification" />
     </onentry>
     <transition target="main" />
   </state>
@@ -69,8 +219,8 @@
     <onentry>
       <log label="[sspeech[vup][emp][emp][emp][emp][emp][emp][emp]-secondmod[vup][emp][emp][emp][emp][emp][emp][emp]]" expr="READY" />
       <assign name="data2" expr="${_eventdata.data}" />
-      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[VUP_FUSION][EMP][EMP][EMP][EMP][EMP][EMP][EMP]')}" />
-      <send event="VUP_FUSION" target="IM" targettype="MC" namelist="newExtensionNotification" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[VUP][EMP][EMP][EMP][EMP][EMP][EMP][EMP]')}" />
+      <send event="VUP_RED" target="IM" targettype="MC" namelist="newExtensionNotification" />
     </onentry>
     <transition target="main" />
   </state>
@@ -136,35 +286,6 @@
     </onentry>
     <transition target="main" />
   </state>
-  <state id="ssecondmod[vup][emp][emp][emp][emp][emp][emp][emp]">
-    <onentry>
-      <log label="[ssecondmod[vup][emp][emp][emp][emp][emp][emp][emp]]" expr="READY" />
-      <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-ssecondmod[vup][emp][emp][emp][emp][emp][emp][emp]" event="timeout-ssecondmod[vup][emp][emp][emp][emp][emp][emp][emp]" delay="1500" target="" targettype="" namelist="" />
-    </onentry>
-    <transition target="secondmod[vup][emp][emp][emp][emp][emp][emp][emp]-final" event="timeout-ssecondmod[vup][emp][emp][emp][emp][emp][emp][emp]" />
-    <transition target="ssecondmod[vup][emp][emp][emp][emp][emp][emp][emp]-speech[vup][emp][emp][emp][emp][emp][emp][emp]" event="[VUP][EMP][EMP][EMP][EMP][EMP][EMP][EMP]" />
-    <onexit>
-      <cancel sendid="state1-timer-ssecondmod[vup][emp][emp][emp][emp][emp][emp][emp]" />
-    </onexit>
-  </state>
-  <state id="secondmod[vup][emp][emp][emp][emp][emp][emp][emp]-final">
-    <onentry>
-      <log label="[secondmod[vup][emp][emp][emp][emp][emp][emp][emp]-final]" expr="READY" />
-      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF2(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1, '[VUP_FUSION][EMP][EMP][EMP][EMP][EMP][EMP][EMP]')}" />
-      <send event="VUP_FUSION" target="IM" targettype="MC" namelist="newExtensionNotification" />
-    </onentry>
-    <transition target="main" />
-  </state>
-  <state id="ssecondmod[vup][emp][emp][emp][emp][emp][emp][emp]-speech[vup][emp][emp][emp][emp][emp][emp][emp]">
-    <onentry>
-      <log label="[ssecondmod[vup][emp][emp][emp][emp][emp][emp][emp]-speech[vup][emp][emp][emp][emp][emp][emp][emp]]" expr="READY" />
-      <assign name="data2" expr="${_eventdata.data}" />
-      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[VUP_FUSION][EMP][EMP][EMP][EMP][EMP][EMP][EMP]')}" />
-      <send event="VUP_FUSION" target="IM" targettype="MC" namelist="newExtensionNotification" />
-    </onentry>
-    <transition target="main" />
-  </state>
   <state id="sspeech[help][emp][emp][emp][emp][emp][emp][emp]">
     <onentry>
       <log label="[sspeech[help][emp][emp][emp][emp][emp][emp][emp]]" expr="READY" />
@@ -184,32 +305,11 @@
     </onentry>
     <transition target="main" />
   </state>
-  <state id="ssecondmod[skip][emp][emp][emp][emp][emp][emp][emp]">
-    <onentry>
-      <log label="[ssecondmod[skip][emp][emp][emp][emp][emp][emp][emp]]" expr="READY" />
-      <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-ssecondmod[skip][emp][emp][emp][emp][emp][emp][emp]" event="timeout-ssecondmod[skip][emp][emp][emp][emp][emp][emp][emp]" delay="1500" target="" targettype="" namelist="" />
-    </onentry>
-    <transition target="main" event="timeout-ssecondmod[skip][emp][emp][emp][emp][emp][emp][emp]" />
-    <transition target="ssecondmod[skip][emp][emp][emp][emp][emp][emp][emp]-speech[now][emp][emp][emp][emp][emp][emp][emp]" event="[NOW][EMP][EMP][EMP][EMP][EMP][EMP][EMP]" />
-    <onexit>
-      <cancel sendid="state1-timer-ssecondmod[skip][emp][emp][emp][emp][emp][emp][emp]" />
-    </onexit>
-  </state>
-  <state id="ssecondmod[skip][emp][emp][emp][emp][emp][emp][emp]-speech[now][emp][emp][emp][emp][emp][emp][emp]">
-    <onentry>
-      <log label="[ssecondmod[skip][emp][emp][emp][emp][emp][emp][emp]-speech[now][emp][emp][emp][emp][emp][emp][emp]]" expr="READY" />
-      <assign name="data2" expr="${_eventdata.data}" />
-      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[SKIP_FUSION][EMP][EMP][EMP][EMP][EMP][EMP][EMP]')}" />
-      <send event="SKIP_FUSION" target="IM" targettype="MC" namelist="newExtensionNotification" />
-    </onentry>
-    <transition target="main" />
-  </state>
   <state id="sspeech[vdown][emp][emp][emp][emp][emp][emp][emp]">
     <onentry>
       <log label="[sspeech[vdown][emp][emp][emp][emp][emp][emp][emp]]" expr="READY" />
       <assign name="data1" expr="${_eventdata.data}" />
-      <send id="state1-timer-sspeech[vdown][emp][emp][emp][emp][emp][emp][emp]" event="timeout-sspeech[vdown][emp][emp][emp][emp][emp][emp][emp]" delay="1500" target="" targettype="" namelist="" />
+      <send id="state1-timer-sspeech[vdown][emp][emp][emp][emp][emp][emp][emp]" event="timeout-sspeech[vdown][emp][emp][emp][emp][emp][emp][emp]" delay="4000" target="" targettype="" namelist="" />
     </onentry>
     <transition target="speech[vdown][emp][emp][emp][emp][emp][emp][emp]-final" event="timeout-sspeech[vdown][emp][emp][emp][emp][emp][emp][emp]" />
     <transition target="sspeech[vdown][emp][emp][emp][emp][emp][emp][emp]-secondmod[vdown][emp][emp][emp][emp][emp][emp][emp]" event="[VDOWN][EMP][EMP][EMP][EMP][EMP][EMP][EMP]" />
@@ -220,8 +320,8 @@
   <state id="speech[vdown][emp][emp][emp][emp][emp][emp][emp]-final">
     <onentry>
       <log label="[speech[vdown][emp][emp][emp][emp][emp][emp][emp]-final]" expr="READY" />
-      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF2(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1, '[VDOWN_FUSION][EMP][EMP][EMP][EMP][EMP][EMP][EMP]')}" />
-      <send event="VDOWN_FUSION" target="IM" targettype="MC" namelist="newExtensionNotification" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF2(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1, '[VDOWN][EMP][EMP][EMP][EMP][EMP][EMP][EMP]')}" />
+      <send event="VDOWN_RED" target="IM" targettype="MC" namelist="newExtensionNotification" />
     </onentry>
     <transition target="main" />
   </state>
@@ -229,8 +329,8 @@
     <onentry>
       <log label="[sspeech[vdown][emp][emp][emp][emp][emp][emp][emp]-secondmod[vdown][emp][emp][emp][emp][emp][emp][emp]]" expr="READY" />
       <assign name="data2" expr="${_eventdata.data}" />
-      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[VDOWN_FUSION][EMP][EMP][EMP][EMP][EMP][EMP][EMP]')}" />
-      <send event="VDOWN_FUSION" target="IM" targettype="MC" namelist="newExtensionNotification" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[VDOWN][EMP][EMP][EMP][EMP][EMP][EMP][EMP]')}" />
+      <send event="VDOWN_RED" target="IM" targettype="MC" namelist="newExtensionNotification" />
     </onentry>
     <transition target="main" />
   </state>
@@ -249,8 +349,8 @@
   <state id="secondmod[vdown][emp][emp][emp][emp][emp][emp][emp]-final">
     <onentry>
       <log label="[secondmod[vdown][emp][emp][emp][emp][emp][emp][emp]-final]" expr="READY" />
-      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF2(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1, '[VDOWN_FUSION][EMP][EMP][EMP][EMP][EMP][EMP][EMP]')}" />
-      <send event="VDOWN_FUSION" target="IM" targettype="MC" namelist="newExtensionNotification" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF2(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1, '[VDOWN][EMP][EMP][EMP][EMP][EMP][EMP][EMP]')}" />
+      <send event="VDOWN_RED" target="IM" targettype="MC" namelist="newExtensionNotification" />
     </onentry>
     <transition target="main" />
   </state>
@@ -258,8 +358,8 @@
     <onentry>
       <log label="[ssecondmod[vdown][emp][emp][emp][emp][emp][emp][emp]-speech[vdown][emp][emp][emp][emp][emp][emp][emp]]" expr="READY" />
       <assign name="data2" expr="${_eventdata.data}" />
-      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[VDOWN_FUSION][EMP][EMP][EMP][EMP][EMP][EMP][EMP]')}" />
-      <send event="VDOWN_FUSION" target="IM" targettype="MC" namelist="newExtensionNotification" />
+      <commons:var name="newExtensionNotification" expr="${mmi:newExtensionNotificationF(contextId, 'FUSION', 'IM', mmi:newRequestId(contextId), null, data1,data2, '[VDOWN][EMP][EMP][EMP][EMP][EMP][EMP][EMP]')}" />
+      <send event="VDOWN_RED" target="IM" targettype="MC" namelist="newExtensionNotification" />
     </onentry>
     <transition target="main" />
   </state>

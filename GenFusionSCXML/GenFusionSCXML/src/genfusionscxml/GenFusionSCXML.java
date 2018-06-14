@@ -30,12 +30,16 @@ public class GenFusionSCXML {
     fg.Complementary(Speech.NOW, SecondMod.BACK, Output.BACK_FUSION);
     
     // Redundant Gestures
-    fg.Redundancy(Speech.VUP, SecondMod.VUP, Output.VUP_FUSION);
-    fg.Redundancy(Speech.VDOWN, SecondMod.VDOWN, Output.VDOWN_FUSION);
+    fg.Redundancy(Speech.VUP, SecondMod.VUP, Output.VUP_RED);
+    fg.Redundancy(Speech.VDOWN, SecondMod.VDOWN, Output.VDOWN_RED);
     
     // Single Gestures in Speech
     fg.Single(Speech.HELP, Output.HELP);
-    
+    fg.Single(Speech.QUIT, Output.QUIT);
+    fg.Single(Speech.ADD, Output.ADD);
+    fg.Single(Speech.PLAY, Output.PLAY);
+    fg.Single(Speech.MUTE, Output.MUTE);
+    fg.Single(Speech.UNMUTE, Output.UNMUTE);
     
     fg.Build("fusion.scxml");
     }

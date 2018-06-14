@@ -28,24 +28,6 @@
         // List of gesture detectors, there will be one detector created for each potential body (max of 6)
         private List<GestureDetector> gestureDetectorList = null;
 
-        private void send_test(object sender, RoutedEventArgs e)
-        {
-            LifeCycleEvents lce = new LifeCycleEvents("TOUCH", "FUSION", "touch-1", "touch", "command");
-            MmiCommunication mmic = new MmiCommunication("localhost", 9876, "User1", "TOUCH");  //CHANGED To user1
-            //mmic = new MmiCommunication("localhost", 8000, "User1", "GESTURES"); // MmiCommunication(string IMhost, int portIM, string UserOD, string thisModalityName)
-            mmic.Send(lce.NewContextRequest());
-            string json = "{ \"recognized\": [";
-            json += "\"" + "PAUSE" + "\", ";
-            // Just using the first two comands. The rest is EMP
-            for (int i = 1; i < 8; i++)
-            {
-                json += "\"" + "EMP" + "\", ";
-            }
-            json = json.Substring(0, json.Length - 2);
-            json += "] }";
-            var exNot = lce.ExtensionNotification("-1", "-1", 1.0f, json);
-            mmic.Send(exNot);
-        }
 
         // Initialize new instance of the MainWindow class
         public MainWindow()

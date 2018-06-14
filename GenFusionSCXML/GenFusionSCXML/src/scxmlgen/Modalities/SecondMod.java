@@ -36,5 +36,4 @@ public enum SecondMod implements IModality {
     public String getEvName() {
         return getModalityName().toLowerCase() + event.toLowerCase();
     }
-
 }
