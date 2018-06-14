@@ -76,6 +76,12 @@
         I want to listen<tag>out = "LISTEN"</tag>
       </item>
       <item>
+        Play <tag>out = "LISTEN"</tag>
+      </item>
+      <item>
+        Play for me<tag>out = "LISTEN"</tag>
+      </item>
+      <item>
         Continue<tag>out = "PLAY"</tag>
       </item>
       <item>

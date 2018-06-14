@@ -26,9 +26,6 @@ namespace AppGui
         public MainWindow()
         {
             InitializeComponent();
-            // To ensure that volume is ok
-            spotify.SetSpotifyVolume(100);
-            spotify.UnMute();
 
             t.Speak("Wait a few seconds, we are just getting everything ready for you!");
             SpotifyAPI spotifyAPI = new SpotifyAPI();
@@ -85,13 +82,16 @@ namespace AppGui
                 return;
             }
 
-            if(!is_command_valid(command, album, song, by, artist, genre, from, year))
+            if (!is_command_valid(command, album, song, by, artist, genre, from, year))
             {
                 t.Speak("Can you try again?");
             }
 
             // Using just a normal command
             else {
+                // Guarantee that volume is ok
+                spotify.UnMute();
+                spotify.SetSpotifyVolume(100);
                 switch (command)
                 {
                     case "HELP":
