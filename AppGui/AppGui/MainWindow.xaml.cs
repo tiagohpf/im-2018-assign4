@@ -26,6 +26,9 @@ namespace AppGui
         public MainWindow()
         {
             InitializeComponent();
+            // To ensure that volume is ok
+            spotify.SetSpotifyVolume(100);
+            spotify.UnMute();
 
             t.Speak("Wait a few seconds, we are just getting everything ready for you!");
             SpotifyAPI spotifyAPI = new SpotifyAPI();
